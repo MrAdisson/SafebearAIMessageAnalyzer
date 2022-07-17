@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const dotenv = require('dotenv').config()
 const path = require('path')
 const tf = require('@tensorflow/tfjs-node');
 const toxicity = require('@tensorflow-models/toxicity');
@@ -55,5 +56,5 @@ app.post('/data', (req, res) => {
 
 
 app.listen(3000, ()=>{
-    console.log('APP RUNNING ! Listening on port', 3000)
+    console.log('APP RUNNING ! Listening on port', process.env.PORT)
 })
