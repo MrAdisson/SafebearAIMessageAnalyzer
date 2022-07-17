@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Safebear Alpha</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,900&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='public/css/main.css'>
+</head>
+<body>
+
+<h1> Safebear Message Analyzer Version 0.1</h1>
+
+<div class="dflex">
+
+    <h2>SafeBearAI</h2>
+
+<img class='safebearLogo'src="/public/img/LOGO_ai_rgb.png">
+    <form id='textForm' action='/data' method='POST' class="dflex">
+        <input placeholder="Entrez un texte à analyser" type='text' name='textInput' class="textInput" id='textInput'> </input>
+        <button id='submitBtn' type='submit'>Valider </button>
+    
+    </form>
+    
+    <div class="tabcontainer">
+    
+        <div class="topic" id="topic_identity_attack">Racisme</div>
+        <div class="result" id="result_identity_attack"></div>
+        <div class="topic" id="topic_insult">Insulte</div>
+        <div class="result" id="result_insult"></div>
+        <div class="topic" id="topic_obscene">Obsénité</div>
+        <div class="result" id="result_obscene"></div>
+        <div class="topic" id="topic_severe_toxicity">Toxicité sévère</div>
+        <div class="result" id="result_severe_toxicity"></div>
+        <div class="topic" id="topic_sexual_explicit">Sexualité explicite</div>
+        <div class="result" id="result_sexual_explicit"></div>
+        <div class="topic" id="topic_threat">Menace</div>
+        <div class="result" id="result_threat"></div>
+        <div class="topic" id="topic_toxicity">Toxicité</div>
+        <div class="result" id="result_toxicity"></div>
+    </div>
+
+</div>
+
+
+<div class="dflex">
+    <h2>Resultats :</h2>
+
+    <div id="resultList"> 
+</div>
+
+
+
+</div>
+
+
+<script src='/public/index.js'></script>
+
+</body>
+</html>
