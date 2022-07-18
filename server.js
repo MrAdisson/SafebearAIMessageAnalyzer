@@ -1,4 +1,5 @@
 const express = require('express')
+const compression = require('compression')
 const app = express()
 const dotenv = require('dotenv').config()
 const path = require('path')
@@ -22,6 +23,7 @@ async function translation(text){
   return await translatte(text, {from:'fr', to:'en'})
 }
 
+app.use(compression())
 app.use(express.urlencoded({ extended: true }))
 app.use('/public', express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'ejs')
@@ -41,6 +43,7 @@ app.get('/test', (req, res) => {
 })
 
 app.post('/data', (req, res) => {
+    console.log(req.body)
     translation(req.body.textInput)
     .then(translatedText => {
         console.log(translatedText.text)
@@ -55,6 +58,6 @@ app.post('/data', (req, res) => {
 })
 
 
-app.listen(3000, ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log('APP RUNNING ! Listening on port', process.env.PORT)
 })
