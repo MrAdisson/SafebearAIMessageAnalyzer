@@ -21,7 +21,7 @@ async function classify(text){
 
 async function translation(text){
   return await translatte(text, {from:'fr', to:'en'})
-}
+}-
 
 app.use(compression())
 app.use(express.urlencoded({ extended: true }))
